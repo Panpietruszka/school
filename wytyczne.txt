@@ -1,0 +1,9 @@
+Specyfikacja aplikacji:
+a. na starcie 2 linki ostylowane jako buttony
+b. pierwszy button wyświetla pod spodem wszystkie utwory w formie tabeli
+c. drugi button wyświetla pod spodem formularz do dodawania utworów 
+d. każdy rekord tabeli ma mieć do dyspozycji link, w postaci buttonu, do usuwania rekordu 
+e. każdy rekord ma mieć button do wyświetlania wszystkich informacji o klikniętym rekordzie
+f. działanie wszystkich buttonów, za wyjątkiem buttona z punktu e., ma działać w oparciu o symulowane endpointy
+g. działanie buttona z punktu e. ma opierać się o skrypt JS
+h. ostylowanie wg własnego pomysłu
