@@ -1,57 +1,32 @@
-<?php
-$hostname = 'localhost';
-$user = 'root';
-$password = '';
-$db = 'spotify';
-
-$conn = mysqli_connect($hostname, $user, $password, $db);
-
-function mojaFunkcja($conn)
-{
-    $q = "SELECT * FROM utwory";
-    $result = mysqli_query($conn, $q);
-    echo "<table class=''><tr><th>ID</th><th>Tytuł</th><th>Artysta</th><th>Usuń</th></tr>";
-    while ($row = mysqli_fetch_assoc($result)) {
-        echo "<tr><td>{$row['id']}</td><td>{$row['tytul']}</td><td>{$row['artysta']}</td><td><button type=" . "[submit]" . " name=" . "[btn_Usun]" . ">Usuń</button></td><td><button type=" . "[submit]" . " name=" . "[btn_Dodaj]" . ">Dodaj</button></td></tr>";
-    }
-    echo "</table>";
-
-}
-?>
-
 <!DOCTYPE html>
 <html lang="pl">
 
 <head>
     <meta charset="UTF-8">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="bg-[#152614] text-[#fafafa]">
 
-    <form method="POST">
-        <button type="submit" name="pokaz_tabele" class="bg-white text-black px-4 py-2 rounded">
-            Kliknij, aby załadować PHP
+
+    <canvas id="dustCanvas"></canvas>
+
+        <button id="btn-toggle-tabela" class="bg-white text-black px-4 py-2 rounded">
+            Pokaż/Ukryj Tabelę
         </button>
         <button type="submit" name="pokaz_formularz" class="bg-white text-black px-4 py-2 rounded">
             Kliknij, aby otworzyć formularz
         </button>
-    </form>
 
     <div id="miejsce-na-formularz"></div>
 
     </div>
 
 
-    <div class="mt-5">
-        <?php
-        if (isset($_POST['pokaz_tabele'])) {
-            mojaFunkcja($conn);
-        }
-        ?>
-    </div>
+    <div id="miejsce-na-tabele" class="mt-5"></div>
 
-
+    <script type="module" src="script.js"></script>
     <script>
         const btnPokaz = document.querySelector('button[name="pokaz_formularz"]');
         const kontener = document.getElementById('miejsce-na-formularz');
